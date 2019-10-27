@@ -25,6 +25,7 @@
 		4D903316236644E800473591 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D903315236644E800473591 /* ParameterEncoding.swift */; };
 		4D903318236644F900473591 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D903317236644F900473591 /* URLParameterEncoder.swift */; };
 		4D90331A2366451200473591 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9033192366451200473591 /* JSONParameterEncoder.swift */; };
+		4D90331D236649DC00473591 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90331C236649DC00473591 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		4D903315236644E800473591 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		4D903317236644F900473591 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		4D9033192366451200473591 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		4D90331C236649DC00473591 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		4D9032D123663E0F00473591 /* XNYTimes */ = {
 			isa = PBXGroup;
 			children = (
+				4D90331B2366498D00473591 /* Model */,
 				4D9033022366406900473591 /* Networking */,
 				4D9032D223663E0F00473591 /* AppDelegate.swift */,
 				4D9032D423663E0F00473591 /* SceneDelegate.swift */,
@@ -196,6 +199,14 @@
 				4D9033192366451200473591 /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		4D90331B2366498D00473591 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D90331C236649DC00473591 /* Article.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D90331D236649DC00473591 /* Article.swift in Sources */,
 				4D90330C2366446E00473591 /* NetworkManager.swift in Sources */,
 				4D9033082366410A00473591 /* EndPointType.swift in Sources */,
 				4D903314236644D200473591 /* Router.swift in Sources */,
