@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,7 @@
 		4D9032DA23663E0F00473591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9032D823663E0F00473591 /* Main.storyboard */; };
 		4D9032DC23663E1300473591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9032DB23663E1300473591 /* Assets.xcassets */; };
 		4D9032DF23663E1300473591 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9032DD23663E1300473591 /* LaunchScreen.storyboard */; };
-		4D9032EA23663E1300473591 /* XNYTimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9032E923663E1300473591 /* XNYTimesTests.swift */; };
+		4D9032EA23663E1300473591 /* ArticleModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9032E923663E1300473591 /* ArticleModelTests.swift */; };
 		4D9032F523663E1300473591 /* XNYTimesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9032F423663E1300473591 /* XNYTimesUITests.swift */; };
 		4D9033082366410A00473591 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9033072366410A00473591 /* EndPointType.swift */; };
 		4D90330A236642B600473591 /* ArticleEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D903309236642B600473591 /* ArticleEndPoint.swift */; };
@@ -64,7 +64,7 @@
 		4D9032DE23663E1300473591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D9032E023663E1300473591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D9032E523663E1300473591 /* XNYTimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XNYTimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D9032E923663E1300473591 /* XNYTimesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNYTimesTests.swift; sourceTree = "<group>"; };
+		4D9032E923663E1300473591 /* ArticleModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModelTests.swift; sourceTree = "<group>"; };
 		4D9032EB23663E1300473591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D9032F023663E1300473591 /* XNYTimesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XNYTimesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9032F423663E1300473591 /* XNYTimesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XNYTimesUITests.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		4D9032E823663E1300473591 /* XNYTimesTests */ = {
 			isa = PBXGroup;
 			children = (
-				4D9032E923663E1300473591 /* XNYTimesTests.swift */,
+				4D9032E923663E1300473591 /* ArticleModelTests.swift */,
 				4D9032EB23663E1300473591 /* Info.plist */,
 			);
 			path = XNYTimesTests;
@@ -293,7 +293,6 @@
 				6307D0B92B1DF0A08E51B9C3 /* Pods-XNYTimesTests.debug.xcconfig */,
 				53B312C229BE6A0C31A60097 /* Pods-XNYTimesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -570,7 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D9032EA23663E1300473591 /* XNYTimesTests.swift in Sources */,
+				4D9032EA23663E1300473591 /* ArticleModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
