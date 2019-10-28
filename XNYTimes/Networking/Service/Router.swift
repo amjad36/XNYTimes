@@ -30,19 +30,21 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     }
     
     private func buildRequest(from route: EndPoint) throws -> URLRequest {
+        
         var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path), cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval:  10.0)
+        
         request.httpMethod = route.httpMethod.rawValue
         do {
             switch route.task {
             case .request:
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 
-            case .requestParameters(let bodyParameters, let urlParameters):
-                try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
+            case .requestParameters(let bodyParameters, let bodyEncoding, let urlParameters):
+                try self.configureParameters(bodyParameters: bodyParameters, bodyEncoding: bodyEncoding, urlParameters: urlParameters, request: &request)
                 
-            case .requestParametersAndHeaders(let bodyParameters, let urlParameters, let additionalHeaders):
+            case .requestParametersAndHeaders(let bodyParameters, let bodyEncoding, let urlParameters, let additionalHeaders):
                 self.addAddiyionalHeaders(additionalHeaders, request: &request)
-                try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
+                try self.configureParameters(bodyParameters: bodyParameters, bodyEncoding: bodyEncoding, urlParameters: urlParameters, request: &request)
             
             }
             return request
@@ -52,13 +54,13 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         }
     }
     
-    private func configureParameters(bodyParameters: Parameters?, urlParameters: Parameters?, request: inout URLRequest) throws {
+    private func configureParameters(bodyParameters: Parameters?, bodyEncoding: ParameterEncoding, urlParameters: Parameters?, request: inout URLRequest) throws {
         do {
             if let bodyParameters = bodyParameters {
                 try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters)
             }
             if let urlParameters = urlParameters {
-                try JSONParameterEncoder.encode(urlRequest: &request, with: urlParameters)
+                try URLParameterEncoder.encode(urlRequest: &request, with: urlParameters)
             }
         } catch {
             throw error

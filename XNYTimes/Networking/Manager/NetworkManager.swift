@@ -29,9 +29,9 @@ struct NetworkManager {
     static let articleAPIKey = "oYXG8Sch57JQRnGQzuUvmWjVrhMuRi2c"
     private let router = Router<ArticleApi>()
 
-    func getArticle(completion: @escaping (_ article: [Article]?, _ error: String?) -> ()) {
+    func getArticle(page: Int, completion: @escaping (_ article: [Article]?, _ error: String?) -> ()) {
         
-        router.request(.popularArticle) { (data, response, error) in
+        router.request(.popularArticle(page: page)) { (data, response, error) in
             
             if error != nil {
                 completion(nil, "Please check your network connection.")
@@ -46,8 +46,8 @@ struct NetworkManager {
                         return
                     }
                     do {
-                        let apiResponse = try JSONDecoder().decode([Article].self, from: responseData)
-                        completion(apiResponse, nil)
+                        let apiResponse = try JSONDecoder().decode(ArticleApiResponse.self, from: responseData)
+                        completion(apiResponse.articles, nil)
                     } catch {
                         completion(nil, NetworkResponse.unableToDecode.rawValue)
                     }

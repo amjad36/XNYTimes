@@ -9,12 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let networkManager = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        getData()
     }
-
+    
+    func getData() {
+        networkManager.getArticle(page: 7) { (articles, error) in
+            print(articles ?? "No articles found.")
+        }
+    }
 
 }
 
