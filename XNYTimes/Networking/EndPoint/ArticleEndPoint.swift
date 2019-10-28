@@ -16,7 +16,7 @@ enum NetworkEnvironment {
 }
 
 enum ArticleApi {
-    case popularArticle
+    case popularArticle(page: Int)
 }
 
 extension ArticleApi: EndPointType {
@@ -41,8 +41,8 @@ extension ArticleApi: EndPointType {
     
     var path: String {
         switch self {
-        case .popularArticle:
-            return "7.json"
+        case .popularArticle(let id):
+            return "\(id).json"
         }
     }
     
@@ -53,7 +53,7 @@ extension ArticleApi: EndPointType {
     var task: HTTPTask {
         switch self {
         case .popularArticle:
-            return .request
+            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["api-key": NetworkManager.articleAPIKey])
         }
     }
     

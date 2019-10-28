@@ -8,6 +8,14 @@
 
 import Foundation
 
+class ArticleApiResponse: Codable {
+    var articles: [Article] = [Article]()
+    enum CodingKeys: String, CodingKey {
+        //Encoding/decoding will only include the properties defined in this enum, rest will be ignored
+        case articles = "results"
+    }
+}
+
 class Article: NSObject, Codable {
     var id: Int = 0
     var title: String = ""
