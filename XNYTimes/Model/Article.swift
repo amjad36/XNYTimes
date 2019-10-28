@@ -16,7 +16,7 @@ class ArticleApiResponse: Codable {
     }
 }
 
-class Article: NSObject, Codable {
+struct Article: Codable {
     var id: Int = 0
     var title: String = ""
     var type: String = ""
