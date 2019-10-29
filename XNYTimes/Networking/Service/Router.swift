@@ -56,12 +56,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     private func configureParameters(bodyParameters: Parameters?, bodyEncoding: ParameterEncoding, urlParameters: Parameters?, request: inout URLRequest) throws {
         do {
-            if let bodyParameters = bodyParameters {
-                try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters)
-            }
-            if let urlParameters = urlParameters {
-                try URLParameterEncoder.encode(urlRequest: &request, with: urlParameters)
-            }
+            try bodyEncoding.encode(urlRequest: &request, bodyParameters: bodyParameters, urlParameters: urlParameters)
         } catch {
             throw error
         }
